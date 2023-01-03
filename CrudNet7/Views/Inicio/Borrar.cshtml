@@ -1,0 +1,55 @@
+﻿@model CrudNet7.Models.Contacto
+
+@{
+    ViewData["Title"] = "Borrar Contacto";
+}
+
+<h1 class="text-center">Lista de contactos</h1>
+<div class="row">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Borrar Contacto</strong></h1>
+            </div>
+            <div class="card-body">
+                <form asp-action="Borrar">
+                    <!--ID del usuario como campo oculto-->
+                    <input type="hidden" asp-for="Id" />
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label"></label>
+                        <input asp-for="Nombre" class="form-control" readonly  type="name" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Telefono" class="control-label"></label>
+                        <input asp-for="Telefono" class="form-control" readonly type="number" />
+                        <span asp-validation-for="Telefono" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Celular" class="control-label"></label>
+                        <input asp-for="Celular" class="form-control" readonly type="number" />
+                        <span asp-validation-for="Celular" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" readonly type="email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-danger d-block mx-auto">
+                            <i class="bi bi-eraser-fill"></i>
+                            Borrar Contacto
+                        </button>
+                    </div>
+                </form>
+                <a asp-controller="Inicio" asp-action="Index">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>
